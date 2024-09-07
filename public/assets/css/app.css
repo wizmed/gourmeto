@@ -1,3 +1,6 @@
+.text-shadow{
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.8);
+}
 .orange{
     color: #ff6f61; /* Couleur de fond orange */
 }

@@ -5,20 +5,51 @@
 {% block body %}
 
 
-    <h1 class="text-dark fw-bold fs-4">Bienvenue sur Gourmeto, plus de 500 recettes facile et rapide a réaliser </h1>
+   
 
-    <h2 class="text-dark fw-bold fs-4 mb-0">A la une</h2>
 
-    <div id="carouselExampleInterval" class="carousel slide" data-bs-ride="carousel">
+    <div class="container bg-white shadow py-3">
+     <h1 class="text-dark fw-bold fs-4">&Agrave; la Une de Gourmeto</h1>
+    <div id="carouselExampleInterval" class="carousel slide mx-auto" data-bs-ride="carousel" style="max-width: 100%;">
+    
         <div class="carousel-inner">
+        
             <div class="carousel-item active" data-bs-interval="10000">
-                <img src="https://images.unsplash.com/photo-1580554530778-ca36943938b2?q=80&w=1964&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" class="d-block w-100" alt="Magret de canard">
+            
+                <img src="https://images.unsplash.com/photo-1580554530778-ca36943938b2?q=80&w=1964&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" 
+                class="d-block w-100 img-fluid" 
+                style="height: 50vh; object-fit: contain;" 
+                alt="Magret de canard">
+                <div class="carousel-caption-wrapper d-none d-md-block mt-5">
+                    <div class="carousel-caption text-center text-shadow p-3">
+                        <h5>Magret de canard</h5>
+                        <p>cuit à la perfection avec une sauce au miel.</p>
+                    </div>
+                </div>
             </div>
             <div class="carousel-item" data-bs-interval="10000">
-                <img src="https://images.unsplash.com/photo-1625944525533-473f1a3d54e7?q=80&w=1864&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" class="d-block w-100" alt="Tartare de saumon">
+                <img src="https://images.unsplash.com/photo-1625944525533-473f1a3d54e7?q=80&w=1864&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" 
+                class="d-block w-100 img-fluid" 
+                style="height: 50vh; object-fit: contain;" 
+                alt="Tartare de saumon">
+                <div class="carousel-caption-wrapper d-none d-md-block mt-5">
+                    <div class="carousel-caption text-center text-shadow p-3">
+                        <h5>Tartare de saumon</h5>
+                        <p>Frais et savoureux, le tartare de saumon servi avec des herbes fraîches.</p>
+                    </div>
+                </div>
             </div>
             <div class="carousel-item">
-                <img src="https://images.unsplash.com/photo-1613505411792-208b15f862b0?q=80&w=1740&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" class="d-block w-100" alt="Panacotta à la fraise">
+                <img src="https://images.unsplash.com/photo-1613505411792-208b15f862b0?q=80&w=1740&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" 
+                class="d-block w-100 img-fluid" 
+                style="height: 50vh; object-fit: contain;"
+                alt="Panacotta à la fraise">
+                <div class="carousel-caption-wrapper d-none d-md-block mt-5">
+                    <div class="carousel-caption text-center text-shadow p-3">
+                        <h5>Panacotta à la fraise</h5>
+                        <p>Une panacotta légère et gourmande, accompagnée d'une compotée de fraises.</p>
+                    </div>
+                </div>
             </div>
         </div>
         <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleInterval" data-bs-slide="prev">
@@ -29,7 +60,10 @@
             <span class="carousel-control-next-icon" aria-hidden="true"></span>
             <span class="visually-hidden">Next</span>
         </button>
+    </div>
 </div>
+
+
 
 
 {% endblock %}
