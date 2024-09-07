@@ -1,6 +1,71 @@
+/* Carousel */
 .text-shadow{
     text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.8);
 }
+
+.carousel-inner .carousel-item {
+    overflow: hidden; /* Assure que les débordements sont masqués */
+}
+
+.rounded-3 {
+    border-radius: 1rem; /* Applique le rayon du conteneur */
+    overflow: hidden; /* Assure que les débordements de l'image sont masqués */
+    position: relative;
+}
+
+.image-wrapper {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.image-wrapper img {
+    height: 100%;
+    width: auto;
+    object-fit: cover;
+    border-radius: 1rem;
+}
+
+ 
+/* Media query pour les petits écrans (sm) */
+@media (max-width: 576px) {
+    /* Réduire la hauteur des images */
+    .image-wrapper {
+        height: 50vh; /* Ajuster la hauteur à 50% de la hauteur de la fenêtre */
+        
+    }
+
+    /* Captions générales */
+.carousel-caption-wrapper {
+    position: absolute;
+    top: 7em;
+    width: 100%;
+    padding: 0px;
+    color: #fff;
+    text-align: center;
+}
+    
+}
+
+/* 
+  En résumé, l'utilisation des propriétés suivantes assure que l'image est correctement affichée avec des bords arrondis cohérents :
+
+  - `object-fit: cover` : Cette propriété est utilisée pour s'assurer que l'image couvre entièrement le conteneur tout en conservant ses proportions. Elle remplit le conteneur, mais peut entraîner la coupe de certaines parties de l'image si les proportions de l'image ne correspondent pas exactement à celles du conteneur.
+
+  - `overflow: hidden` : Appliqué au conteneur, cette propriété masque les parties de l'image qui débordent en dehors des limites du conteneur. Cela permet de maintenir des bords arrondis nets en cachant toute partie de l'image qui dépasse du conteneur arrondi.
+
+  - Positionnement approprié : Le positionnement des conteneurs est crucial pour s'assurer que l'image est correctement centrée et redimensionnée dans le conteneur principal. L'utilisation de `display: flex` pour centrer l'image et `position: relative` pour le conteneur garantit que l'image est alignée correctement et que les propriétés de débordement sont respectées.
+
+  Ensemble, ces propriétés assurent que l'image s'affiche en totalité, respecte les proportions du conteneur, et que les bords arrondis du conteneur sont appliqués de manière cohérente à l'image.
+*/
+
+
 .orange{
     color: #ff6f61; /* Couleur de fond orange */
 }
