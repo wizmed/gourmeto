@@ -4,6 +4,27 @@
 
 {% block body %}
 
-<h1 class="text-dark fw-bold fs-4 mb-0">Liste des recettes</h1>
+
+
+<div class="container py-2">
+        
+        
+       
+               
+    <h1 class="text-dark fw-bold fs-4">Index des recettes</h1>
+
+    <ul class="list-group">
+            {% for recette in recettes %}
+                <li class="list-group-item">
+                    <a href="{{ path('recette_show', {'slug': recette.slug}) }}" class="text-dark text-decoration-none">
+                        {{ recette.title }}
+                    </a>
+                </li>
+            {% else %}
+                <li class="list-group-item">Aucune recette disponible</li>
+            {% endfor %}
+        </ul>
+     
+</div>
 
 {% endblock %}
