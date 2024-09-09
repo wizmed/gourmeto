@@ -17,57 +17,7 @@ class RecipeController extends AbstractController
     public function index(EntityManagerInterface $entityManager, RecipeRepository $recipeRepository  ): Response
     {
         
-       // Création d'une nouvelle recette
-$recette = new Recipe();
-$recette->setTitle("Tartare de Saumon Frais avec Herbes Fraîches")
-        ->setContent("Préparez le tartare en coupant le saumon frais en petits dés. Mélangez avec des herbes fraîches hachées, comme de l'aneth et du ciboulette. Ajoutez un peu de jus de citron, de l'huile d'olive, du sel et du poivre au goût. Servez frais avec des tranches de pain grillé.")
-        ->setDuration("15")
-        ->setSlug("tartare-de-saumon-frais-avec-herbes-fraiches")
-        ->setCreatedAt(new DateTimeImmutable()) // Utilise l'heure actuelle
-        ->setUpdatedAt(new DateTimeImmutable());
 
-// Persist l'entité dans la base de données
-$entityManager->persist($recette);
-$entityManager->flush();
-
-// Création d'une nouvelle recette
-$recette = new Recipe();
-$recette->setTitle("Panacotta à la Fraise Accompagnée d'une Compotée de Fraises")
-        ->setContent("Préparez la panacotta en chauffant de la crème avec du sucre et de la vanille, puis ajoutez de la gélatine dissoute. Versez dans des moules et laissez refroidir au réfrigérateur. Pour la compotée, faites cuire des fraises avec un peu de sucre jusqu'à ce qu'elles soient tendres. Servez la panacotta avec la compotée de fraises.")
-        ->setDuration("45")
-        ->setSlug("panacotta-a-la-fraise-accompagnee-dune-compotee-de-fraises")
-        ->setCreatedAt(new DateTimeImmutable()) // Utilise l'heure actuelle
-        ->setUpdatedAt(new DateTimeImmutable());
-
-// Persist l'entité dans la base de données
-$entityManager->persist($recette);
-$entityManager->flush();
-
-// Création d'une nouvelle recette
-$recette = new Recipe();
-$recette->setTitle("Risotto aux Champignons Sauvages")
-        ->setContent("Faites revenir des échalotes et des champignons sauvages dans du beurre. Ajoutez du riz arborio et faites-le sauter jusqu'à ce qu'il devienne translucide. Ajoutez du bouillon de volaille chaud progressivement, en remuant constamment, jusqu'à ce que le riz soit crémeux et cuit. Terminez avec du parmesan râpé et du persil frais.")
-        ->setDuration("35")
-        ->setSlug("risotto-aux-champignons-sauvages")
-        ->setCreatedAt(new DateTimeImmutable()) // Utilise l'heure actuelle
-        ->setUpdatedAt(new DateTimeImmutable());
-
-// Persist l'entité dans la base de données
-$entityManager->persist($recette);
-$entityManager->flush();
-
-// Création d'une nouvelle recette
-$recette = new Recipe();
-$recette->setTitle("Magret de Canard aux Agrumes")
-        ->setContent("Préparez une marinade avec du jus d'orange, du jus de citron, du miel et du gingembre. Faites mariner les magrets de canard pendant au moins une heure. Faites cuire les magrets dans une poêle à feu moyen jusqu'à ce que la peau soit croustillante et la viande rosée. Servez avec un glaçage aux agrumes réduit.")
-        ->setDuration("30")
-        ->setSlug("magret-de-canard-aux-agrumes")
-        ->setCreatedAt(new DateTimeImmutable()) // Utilise l'heure actuelle
-        ->setUpdatedAt(new DateTimeImmutable());
-
-// Persist l'entité dans la base de données
-$entityManager->persist($recette);
-$entityManager->flush();
 
 // Création d'une nouvelle recette
 $recette = new Recipe();
