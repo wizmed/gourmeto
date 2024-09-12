@@ -16,6 +16,8 @@
      {# Inclusion de la barre de navigation #}
     {% include '_partials/_nav.html.twig' %}
     <div class="container-fluid bg-light ">
+    {% include '_partials/flash.html.twig' %}    
+        
     {% block body %}
     {% endblock %}
     </div>

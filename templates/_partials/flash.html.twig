@@ -1,0 +1,9 @@
+
+            {% for type, messages in app.flashes %}
+                <div class="alert alert-{{ type }} mt-3" role='alert'>
+                
+                    {% for message in messages %}
+                        {{ message | join('. ') }}
+                    {% endfor %}
+                </div>
+            {% endfor %}
