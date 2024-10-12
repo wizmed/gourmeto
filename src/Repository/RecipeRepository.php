@@ -40,4 +40,26 @@ class RecipeRepository extends ServiceEntityRepository
                 ->getOneOrNullResult()
             ;
         }
+
+        // Méthode pour trouver les recettes triées par durée
+        public function findAllOrderedByDuration(string $order = 'ASC')
+        {
+            return $this->createQueryBuilder('r')
+                ->orderBy('r.duration', $order)
+                ->getQuery()
+                ->getResult();
+        }
+
+        public function findBySearchTerm(?string $searchTerm)
+        {
+            if (!$searchTerm) {
+                return [];
+            }
+    
+            return $this->createQueryBuilder('r')
+                ->where('r.title LIKE :searchTerm')
+                ->setParameter('searchTerm', '%' . $searchTerm . '%')
+                ->getQuery()
+                ->getResult();
+        }
 }

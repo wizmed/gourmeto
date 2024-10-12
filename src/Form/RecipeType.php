@@ -17,36 +17,66 @@ class RecipeType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options): void
     {
         $builder
-        ->add('title', TextType::class, [
-            'label' => 'Titre de la recette',
-        ])
-        ->add('slug', TextType::class, [
-            'label' => 'Slug',
-        ])
-        ->add('content', TextareaType::class, [
-            'label' => 'Contenu de la recette',
-        ])
-        ->add('created_at', DateType::class, [
-            'widget' => 'single_text',
-            'label' => 'Date de création',
-        ])
-        ->add('updated_at', DateType::class, [
-            'widget' => 'single_text',
-            'label' => 'Date de mise à jour',
-        ])
-        ->add('duration', IntegerType::class, [
-            'label' => 'Durée (en minutes)',
-        ])
-        ->add('save', SubmitType::class, [
-            'label' => 'Modifier',
-            'attr' => ['class' => 'boutton-custom-orange rounded-pill']  // Ajout de la classe CSS
-        ]);
+            ->add('title', TextType::class, [
+                'label' => 'Titre de la recette',
+                'attr' => [
+                    'class' => 'form-control',
+                ],
+                'row_attr' => [
+                    'class' => 'mb-3 w-100 pe-2',
+                ]
+            ])
+            ->add('content', TextareaType::class, [
+                'label' => 'Contenu de la recette',
+                'attr' => [
+                    'class' => 'form-control',
+                    'style' => 'height: 30vh',
+                ]
+            ])
+            ->add('duration', IntegerType::class, [
+                'label' => 'Durée (en minutes)',
+            ])
+            ->add('save', SubmitType::class, [
+                'label' => 'Enregistrer',
+                'attr' => ['class' => 'boutton-custom-orange rounded-pill']
+            ]);
+
+        // Ajouter les champs de date et slug uniquement si `include_options` est vrai
+        if ($options['include_options']) {
+            $builder
+                ->add('created_at', DateType::class, [
+                    'label' => 'Date de création',
+                    'widget' => 'single_text',
+                    'required' => true,
+                    'attr' => [
+                        'class' => 'form-control',
+                    ],
+                    'row_attr' => [
+                        'class' => 'mb-3',
+                    ]
+                ])
+                ->add('updated_at', DateType::class, [
+                    'label' => 'Date de mise à jour',
+                    'widget' => 'single_text',
+                    'required' => true,
+                    'attr' => [
+                        'class' => 'form-control',
+                    ],
+                    'row_attr' => [
+                        'class' => 'mb-3',
+                    ]
+                ])
+                ->add('slug', TextType::class, [
+                    'label' => 'Slug',
+                ]);
+        }
     }
 
     public function configureOptions(OptionsResolver $resolver): void
     {
         $resolver->setDefaults([
             'data_class' => Recipe::class,
+            'include_options' => false, // Valeur par défaut
         ]);
     }
 }

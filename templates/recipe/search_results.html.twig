@@ -1,0 +1,20 @@
+
+{% extends 'base.html.twig' %}
+
+{% block title %}Résultats de recherche{% endblock %}
+
+{% block body %}
+    <h1>Résultats de recherche</h1>
+
+    
+
+    {% if recipes is not empty %}
+        <ul>
+            {% for recipe in recipes %}
+                <li>{{ recipe.title }}</li>
+            {% endfor %}
+        </ul>
+    {% else %}
+        <p>Aucune recette trouvée.</p>
+    {% endif %}
+{% endblock %}

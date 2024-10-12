@@ -1,12 +1,12 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}liste des recettes{% endblock %}
+{% block title %}Recette {{ recette.title }}{% endblock %}
 
 {% block body %}
 
 
 
-<div class="container py-2">
+<div class="container bg-white shadow-lg py-2">
         
         
         <div class="card">
@@ -15,7 +15,7 @@
                 <h1 class="text-dark fw-bold fs-4">{{ recette.title }} </h1><span class="badge bg-orange rounded-pill">Durée : {{ recette.duration }} minutes</span>
                 </div>
                 <!-- Affichage du contenu avec les sauts de ligne ajoutés -->
-                <p>{{ recette.content|add_line_breaks|raw }}</p>                
+                <p>{{ recette.content|add_line_breaks|nl2br|raw }}</p>                
                 <div class="d-flex justify-content-end mt-4">
                     
                     

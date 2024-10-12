@@ -17,8 +17,17 @@ services:
         resource: '../src/'
         exclude:
             - '../src/DependencyInjection/'
-            - '../src/Entity/'
+            # '../src/Entity/'
             - '../src/Kernel.php'
 
     # add more service definitions when explicit configuration is needed
     # please note that last definitions always *replace* previous ones
+
+    # Enregistrement du listener
+    App\Listener\GlobalFormSubscriber:
+        arguments:
+            $formFactory: '@form.factory'
+            $twig: '@twig'
+            $requestStack: '@request_stack'
+        tags:
+            - { name: 'kernel.event_subscriber' }
